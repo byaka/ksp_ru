@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import sys, time, random, os, re
+import sys, os, re
 sys.path.append('libs/')
 
 from functionsex import *
@@ -33,6 +33,7 @@ def updateCategory(pathKSP, pathSource, pathOutput):
          fileWrite(pathOutput+p+'/'+f, data)
       # add sub-dirs to stack
       stack+=[p+'/'+s for s in pathList(pathSource+p, fullPath=False, alsoFiles=False, alsoDirs=True)]
+   print 'Updating categories complited! Output saved to "%s"'%pathOutput
 
 if __name__ == '__main__':
    path='/'.join(getScriptPath().split('/')[:-1])
